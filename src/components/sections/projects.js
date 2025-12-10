@@ -242,7 +242,14 @@ const Projects = () => {
           </div>
 
           <h3 className="project-title">
-            <a href="#email-link">{title}</a>
+            <a
+              href="#email-link"
+              onClick={e => {
+                e.preventDefault();
+                document.getElementById('email-link')?.scrollIntoView({ behavior: 'smooth' });
+              }}>
+              {title}
+            </a>
           </h3>
 
           <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
