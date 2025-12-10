@@ -268,7 +268,7 @@ const StyledProject = styled.li`
         &:before,
         .img {
           background: transparent;
-          filter: none;
+          // filter: none;
         }
       }
 
@@ -290,14 +290,14 @@ const StyledProject = styled.li`
 
     .img {
       border-radius: var(--border-radius);
-      mix-blend-mode: multiply;
-      filter: grayscale(100%) contrast(1) brightness(90%);
+      filter: blur(15px) brightness(50%) contrast(0.7);
+      mix-blend-mode: normal;
 
       @media (max-width: 768px) {
         object-fit: cover;
         width: auto;
         height: 100%;
-        filter: grayscale(100%) contrast(1) brightness(50%);
+        filter: blur(12px) brightness(50%) contrast(0.5);
       }
     }
   }
@@ -402,7 +402,7 @@ const Featured = () => {
                 </div>
 
                 <div className="project-image">
-                  <a href={external ? external : github ? github : '#'}>
+                  <a href="#email-link">
                     <GatsbyImage image={image} alt={title} className="img" />
                   </a>
                 </div>
